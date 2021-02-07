@@ -62,13 +62,12 @@ namespace Cards
             return new Card(suite, figure);
         }
 
-        public CardSet Deck(int amount)
+        public void Full(int amount)
         {
-            CardSet cards = GetCardSet();
-            cards.Full();
-            cards.Sort();
-            cards.Cards.RemoveRange(0, Cards.Count - amount);
-            return cards;
+            Cards.Clear();
+            Full();
+            Cards.Sort();
+            Cards.RemoveRange(0, Cards.Count - amount);
         }
 
         public virtual CardSet GetCardSet()
